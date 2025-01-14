@@ -56,6 +56,7 @@ gcc
 glib     
 google-chrome
 vlc
+vscode
 gitkraken
 telegram-desktop
 discord

@@ -50,7 +50,7 @@
 
     ## BOOT LOADERS: NOT USE ONLY 1. either systemd or grub  
     # Bootloader SystemD
-    #loader.systemd-boot.enable = true;
+    loader.systemd-boot.enable = true;
   
     loader.efi = {
 	    #efiSysMountPoint = "/efi"; #this is if you have separate /efi partition
@@ -60,15 +60,15 @@
     loader.timeout = 1;    
   			
     # Bootloader GRUB
-   loader.grub = {
-	    enable = true;
-	      devices = [ "nodev" ];
-	      efiSupport = true;
-        gfxmodeBios = "auto";
-	      memtest86.enable = true;
-	      extraGrubInstallArgs = [ "--bootloader-id=${host}" ];
-	      configurationName = "${host}";
-  	  	 };
+  #  loader.grub = {
+	#     enable = true;
+	#       devices = [ "nodev" ];
+	#       efiSupport = true;
+  #       gfxmodeBios = "auto";
+	#       memtest86.enable = true;
+	#       extraGrubInstallArgs = [ "--bootloader-id=${host}" ];
+	#       configurationName = "${host}";
+  # 	  	 };
 
     # Bootloader GRUB theme, configure below
 
@@ -118,7 +118,7 @@
   networking.timeServers = options.networking.timeServers.default ++ [ "pool.ntp.org" ];
 
   # Set your time zone.
-  time.timeZone = "Asia/Seoul";
+  time.timeZone = "Asia/Kolkalta";
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
@@ -136,7 +136,7 @@
   };
 
   nixpkgs.config.allowUnfree = true;
-  
+  nixpkgs.config.allowUnfreePredicate = _:true;
   programs = {
 	  hyprland = {
       enable = true;
